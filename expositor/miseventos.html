@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/material.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+    
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+        </header>
+
+    <main class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-blue-900 mb-6">Mis Eventos</h1>
+
+        <!-- Listado de eventos -->
+        <section id="misEventos">
+            <table class="w-full table-auto bg-white rounded-lg shadow-lg">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="px-4 py-2">Nombre</th>
+                        <th class="px-4 py-2">Fecha</th>
+                        <th class="px-4 py-2">Lugar</th>
+                        <th class="px-4 py-2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEventos">
+                    <!-- Los datos se cargarán dinámicamente desde JS -->
+                </tbody>
+            </table>
+        </section>
+
+        <div id="modalEditar" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2">
+                <div class="flex justify-between items-center p-4 border-b">
+                    <h2 class="text-lg font-bold">Editar Evento</h2>
+                    <button id="cerrarModalEditar" class="text-gray-600 hover:text-gray-900">&times;</button>
+                </div>
+                <form id="formularioEditar" class="p-4">
+                    <div class="mb-4">
+                        <label for="nombre" class="block text-gray-700 font-bold mb-2">Nombre del Evento:</label>
+                        <input type="text" id="nombre" name="nombre" class="w-full border rounded-lg px-3 py-2" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="fecha" class="block text-gray-700 font-bold mb-2">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" class="w-full border rounded-lg px-3 py-2" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="lugar" class="block text-gray-700 font-bold mb-2">Lugar:</label>
+                        <input type="text" id="lugar" name="lugar" class="w-full border rounded-lg px-3 py-2" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="pdf" class="block text-gray-700 font-bold mb-2">Adjuntar PDF:</label>
+                        <input type="file" id="pdf" name="pdf" accept="application/pdf" class="w-full border rounded-lg px-3 py-2">
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="/assets/js/menu_dinamico.js"></script>
+    <script src="/assets/js/gestion_expositor1.js"></script>
+</body>
+</html>

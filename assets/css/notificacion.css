@@ -1,0 +1,11 @@
+#menuNotificaciones {
+    display: none; /* Oculto por defecto */
+}
+
+#menuNotificaciones.active {
+    display: block; /* Visible cuando se activa */
+}
+
+.notificacion-mensaje {
+    color: #000000; /* Cambia este valor al color deseado */
+}

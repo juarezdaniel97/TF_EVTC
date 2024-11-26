@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+        <h1 class="text-2xl font-bold text-blue-900 mb-4">Iniciar Sesión</h1>
+        <form id="formLogin">
+            <div class="mb-4">
+                <label for="rol" class="block text-gray-700">Selecciona tu Rol:</label>
+                <select id="rol" class="w-full border rounded px-3 py-2 mt-1">
+                    <option value="administrador">Administrador</option>
+                    <option value="expositor">Expositor</option>
+                    <option value="participante">Participante</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+                Iniciar Sesión
+            </button>
+        </form>
+    </div>
+    <script src="/assets/js/login.js" defer></script>
+</body>
+</html>

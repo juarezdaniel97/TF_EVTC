@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Conferencia de Tecnología",
+        "fecha": "2024-11-25",
+        "descripcion": "Explora los avances tecnológicos más recientes en IA, robótica y más.",
+        "lugar": "Auditorio Principal",
+        "imagen": "/assets/img/conferencia_tecnologia.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Competencia de Programación",
+        "fecha": "2025-01-20",
+        "descripcion": "Participa y muestra tus habilidades en resolución de problemas algorítmicos.",
+        "lugar": "Laboratorio C",
+        "imagen": "/assets/img/competencia_programacion.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Taller de Innovación",
+        "fecha": "2024-11-27",
+        "descripcion": "Aprende técnicas de innovación para resolver problemas complejos.",
+        "lugar": "Sala 2",
+        "imagen": "/assets/img/innovacion.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Jornada de Ciberseguridad",
+        "fecha": "2025-01-12",
+        "descripcion": "Descubre cómo proteger sistemas y datos ante amenazas actuales.",
+        "lugar": "Auditorio Tecnológico",
+        "imagen": "/assets/img/jornada_ciberseguridad.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Hackatón Universitario",
+        "fecha": "2024-12-02",
+        "descripcion": "Colabora en desafíos tecnológicos y muestra tu creatividad.",
+        "lugar": "Laboratorio A",
+        "imagen": "/assets/img/hackaton.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Charla de Liderazgo",
+        "fecha": "2024-11-30",
+        "descripcion": "Desarrolla habilidades clave para liderar equipos y proyectos.",
+        "lugar": "Auditorio",
+        "imagen": "/assets/img/Liderazgo.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Taller de Inteligencia Artificial",
+        "fecha": "2025-06-18",
+        "descripcion": "Explora las aplicaciones prácticas de la IA generativa en la industria.",
+        "lugar": "Sala de Innovación",
+        "imagen": "/assets/img/taller_ia.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Foro de Emprendedores",
+        "fecha": "2024-09-10",
+        "descripcion": "Encuentro con emprendedores destacados para compartir experiencias.",
+        "lugar": "Salón de Eventos",
+        "imagen": "/assets/img/foro_emprendedores.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Seminario de Big Data",
+        "fecha": "2025-104-15",
+        "descripcion": "Aprende sobre herramientas y tendencias en el manejo de datos masivos.",
+        "lugar": "Aula Magna",
+        "imagen": "/assets/img/seminario_bigdata.jpg"
+    }
+]

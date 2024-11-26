@@ -1,0 +1,20 @@
+[
+    {
+        "titulo": "Guía para Expositores",
+        "descripcion": "Un documento que te ayudará a preparar tus presentaciones.",
+        "enlace": "https://example.com/guia-expositores.pdf",
+        "imagen": "/images/guia-expositores.jpg"
+    },
+    {
+        "titulo": "Plantilla de Presentación",
+        "descripcion": "Descarga la plantilla oficial para tus diapositivas.",
+        "enlace": "https://example.com/plantilla-presentacion.pptx",
+        "imagen": "/images/plantilla-presentacion.jpg"
+    },
+    {
+        "titulo": "Manual de Uso del Sistema",
+        "descripcion": "Instrucciones para gestionar tus eventos de manera eficiente.",
+        "enlace": "https://example.com/manual-uso.pdf",
+        "imagen": "/images/manual-uso.jpg"
+    }
+]

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGEE - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/notificaciones.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú de navegación -->
+            <nav id="menu"
+                class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white text-center py-20">
+        <h2 class="text-4xl font-bold">Bienvenido a la Plataforma de Gestión de Eventos Estudiantiles</h2>
+        <p class="mt-4">Organiza, inscríbete y participa en eventos académicos fácilmente.</p>
+        <button id="verEventos" class="mt-6 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600">
+            Ver Eventos Destacados
+        </button>
+    </section>
+
+    <!-- Eventos Destacados -->
+    <section id="eventosDestacados" class="container mx-auto py-12 hidden">
+        <h3 class="text-3xl font-bold text-center text-blue-900">Eventos Destacados</h3>
+        <div id="eventosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <!-- Eventos generados dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Adicionales -->
+    <section id="adicionales" class="py-12 bg-gray-100">
+        <div class="container mx-auto">
+
+            <!-- Eventos -->
+            <div class="mb-12" id="event_container">
+                <h3 class="text-3xl text-blue-600 font-bold text-center mb-4">Eventos Disponibles</h3>
+                <div id="event_data" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Eventos generador dinámicamente -->
+
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="mb-12 text-center bg-white">
+                <h3 class="text-2xl text-blue-600 font-semibold mb-4">Impacto de Nuestra Plataforma</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <h4 class="text-4xl font-bold text-orange-400">120+</h4>
+                        <p class="text-gray-700">Eventos Registrados</p>
+                    </div>
+                    <div>
+                        <h4 class="text-4xl font-bold text-orange-400">5000+</h4>
+                        <p class="text-gray-700">Participantes</p>
+                    </div>
+                    <div>
+                        <h4 class="text-4xl font-bold text-orange-400">10+</h4>
+                        <p class="text-gray-700">Categorías</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonios -->
+            <section id="testimonios" class="py-12 bg-gray-50">
+                <div class="container mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-blue-600 mb-6">Testimonios</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Testimonios adaptados -->
+                        <!-- Testimonio 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <img src="/assets/img/persona1.jpg" alt="Testimonio 1"
+                                class="w-20 h-20 mx-auto rounded-full mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold">Carlos Mendoza, Docente</h3>
+                            <p class="text-gray-600 italic mt-3">"Participar en estos eventos me abrió muchas puertas en
+                                el ámbito profesional."</p>
+                        </div>
+                        <!-- Testimonio 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <img src="/assets/img/persona2.jpg" alt="Testimonio 2"
+                                class="w-20 h-20 mx-auto rounded-full mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold">Laura Gutiérrez, Estudiante</h3>
+                            <p class="text-gray-600 italic mt-3">"Los talleres son increíbles. Aprendí nuevas
+                                habilidades aplicables en mi carrera."</p>
+                        </div>
+                        <!-- Testimonio 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg">
+                            <img src="/assets/img/persona3.jpg" alt="Testimonio 3"
+                                class="w-20 h-20 mx-auto rounded-full mb-4 shadow-md">
+                            <h3 class="text-lg font-semibold">Pedro López, Docente</h3>
+                            <p class="text-gray-600 italic mt-3">"La organización de estos eventos es excelente. Siempre
+                                los espero con entusiasmo."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preguntas Frecuentes -->
+            <section id="faq" class="py-12 bg-white">
+                <div class="container mx-auto">
+                    <h2 class="text-3xl font-bold text-blue-600 mb-6">Preguntas Frecuentes</h2>
+                    <div class="space-y-4">
+
+                        <!-- Pregunta 1 -->
+                        <div class="border rounded-lg overflow-hidden shadow-md">
+                            <button
+                                class="w-full text-left px-4 py-3 bg-blue-500 text-white font-semibold hover:bg-orange-400 focus:outline-none">
+                                ¿Cómo puedo registrarme en un evento?
+                            </button>
+                            <div class="hidden px-4 py-3 bg-gray-50">
+                                Para inscribirte a un evento, debes ingresar a la sección "Eventos Disponibles",
+                                seleccionar el evento de tu interés y hacer clic en el botón "Inscribirse". Una vez
+                                confirmada tu inscripción, recibirás un correo de confirmación con los detalles del
+                                evento.
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="border rounded-lg overflow-hidden shadow-md">
+                            <button
+                                class="w-full text-left px-4 py-3 bg-blue-500 text-white font-semibold hover:bg-orange-400 focus:outline-none">
+                                ¿Qué hago si no puedo asistir al evento después de inscribirme?
+                            </button>
+                            <div class="hidden px-4 py-3 bg-gray-50">
+                                Si no puedes asistir al evento después de haberte inscrito, puedes cancelar tu
+                                inscripción desde tu perfil de usuario, en la sección "Mis Inscripciones". También te
+                                recomendamos notificar a los organizadores para que puedan reubicar tu lugar en caso de
+                                ser necesario.
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="border rounded-lg overflow-hidden shadow-md">
+                            <button
+                                class="w-full text-left px-4 py-3 bg-blue-500 text-white font-semibold hover:bg-orange-400 focus:outline-none">
+                                ¿Cómo puedo registrar un evento como expositor?
+                            </button>
+                            <div class="hidden px-4 py-3 bg-gray-50">
+                                Para registrar un evento como expositor, debes iniciar sesión con tu rol de expositor y
+                                dirigirte a la sección "Registrar Evento". Allí deberás completar un formulario con los
+                                detalles del evento (nombre, fecha, descripción, material de apoyo, etc.).
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 4 -->
+                        <div class="border rounded-lg overflow-hidden shadow-md">
+                            <button
+                                class="w-full text-left px-4 py-3 bg-blue-500 text-white font-semibold hover:bg-orange-400 focus:outline-none">
+                                ¿Qué pasa si tengo un problema técnico durante mi presentación?
+                            </button>
+                            <div class="hidden px-4 py-3 bg-gray-50">
+                                Si enfrentas un problema técnico durante tu presentación, puedes solicitar asistencia a
+                                través de la sección "Soporte Técnico" en el panel del evento. Nuestro equipo estará
+                                disponible para ayudarte a resolver cualquier inconveniente lo más rápido posible
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="border rounded-lg overflow-hidden shadow-md">
+                            <button
+                                class="w-full text-left px-4 py-3 bg-blue-500 text-white font-semibold hover:bg-orange-400 focus:outline-none">
+                                ¿Cómo puedo contactar con soporte técnico?
+                            </button>
+                            <div class="hidden px-4 py-3 bg-gray-50">
+                                Si tienes problemas con el sistema, puedes contactar con el soporte técnico a través de
+                                la sección "Ayuda" en el menú o enviar un correo a soporte@eventos.com. Nos aseguraremos
+                                de responder a tu solicitud lo antes posible.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 p-3 text-white text-center" id="contacto">
+        <div class="container mx-auto">
+            <h3 class="text-lg font-semibold">Contáctanos</h3>
+            <p class="text-sm mt-1">¿Tienes dudas o sugerencias? No dudes en escribirnos. Estamos aquí para ayudarte.
+            </p>
+            <form action="#" method="POST" class="mt-4 max-w-md mx-auto space-y-3">
+                <input type="text" name="nombre"
+                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                    placeholder="Tu nombre" required>
+                <input type="email" name="email"
+                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                    placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" rows="3"
+                    class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                    placeholder="Tu mensaje" required></textarea>
+                <button type="submit"
+                    class="w-full bg-orange-500 text-white py-1 rounded-lg hover:bg-orange-400 focus:outline-none transition duration-300">Enviar
+                    Mensaje</button>
+            </form>
+        </div>
+        <div class="bg-gray-800 text-white text-center mt-3 py-2">
+            <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/menu_dinamico.js"></script>
+    <script src="/assets/js/eventos.js"></script>
+    <script src="/assets/js/notificaciones.js"></script>
+
+</body>
+
+</html>

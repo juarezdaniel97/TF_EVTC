@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento - Conferencia Tecnología</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Barra de navegación -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Título del sitio -->
+            <h1 class="text-2xl font-bold">PGEE</h1>
+
+            <!-- Menú para pantallas grandes -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="/index.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Inicio</a>
+                <a href="#event_container" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Eventos</a>
+                <a href="#contacto" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Contactar</a>
+                <a href="login.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Iniciar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Introducción -->
+    <section class="py-12 bg-blue-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl text-white font-semibold text-blue-900">Bienvenidos a la Charla de Liderazgo</h2>
+            <p class="text-gray-300 mt-4 text-lg">Una oportunidad única para aprender de los mejores expertos en liderazgo y gestión de equipos.</p>
+            <p class="text-gray-300 mt-4">Fecha: 30 de Noviembre 2024 | Ubicación: Auditorio Principal</p>
+        </div>
+    </section>
+
+    <!-- Sección de Oradores -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-blue-900">Oradores Principales</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Orador 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="/assets/img/orador1.jfif" alt="Orador 1" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-blue-900">Carlos Pérez</h3>
+                    <p class="text-gray-600 mt-2">Coach en Liderazgo y Gestión de Equipos</p>
+                </div>
+                <!-- Orador 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="/assets/img/orador2.jfif" alt="Orador 2" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-blue-900">Mónica Fernández</h3>
+                    <p class="text-gray-600 mt-2">Especialista en Comunicación y Motivación Organizacional</p>
+                </div>
+                <!-- Orador 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="assets/img/orador3.jfif" alt="Orador 3" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-blue-900">Luis Martínez</h3>
+                    <p class="text-gray-600 mt-2">Mentor y Speaker Internacional sobre Liderazgo Transformacional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Cronograma -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-blue-900">Cronograma Detallado</h2>
+            <p class="text-gray-700 mt-4">No te pierdas ni un solo detalle de este evento.</p>
+            <div class="mt-8 space-y-8">
+                <div class="flex justify-between items-center bg-blue-100 p-4 rounded-lg shadow-md">
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">10:00 AM - 11:00 AM</p>
+                        <p class="text-gray-600">Apertura y Bienvenida</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">Carlos Pérez</p>
+                        <p class="text-gray-600">Tema: Fundamentos del Liderazgo Eficaz</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-red-100 p-4 rounded-lg shadow-md">
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">11:30 AM - 12:30 PM</p>
+                        <p class="text-gray-600">Taller de Comunicación Asertiva</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">Mónica Fernández</p>
+                        <p class="text-gray-600">Tema: Cómo Motivar a Tu Equipo de Trabajo</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md">
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">01:00 PM - 02:00 PM</p>
+                        <p class="text-gray-600">Almuerzo y Networking</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center bg-green-100 p-4 rounded-lg shadow-md">
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">02:30 PM - 04:00 PM</p>
+                        <p class="text-gray-600">Mesa Redonda sobre Liderazgo Transformacional</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-blue-900">Luis Martínez</p>
+                        <p class="text-gray-600">Tema: Liderazgo en Tiempos de Cambio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Sección de Información del Evento -->
+    <section class="py-16 bg-yellow-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-blue-900">Información Importante</h2>
+            <div class="mt-8">
+                <p class="text-gray-700"> <b>Ubicación: Auditorio Principal, Universidad Nacional de Catamarca</b></p>
+                <p class="text-gray-700 mt-4">Fecha: 30 de Noviembre de 2024</p>
+                <p class="text-gray-700 mt-4">Horario: De 10:00 AM a 4:00 PM</p>
+                <p class="text-gray-700 mt-4">Precio: Entrada gratuita con inscripción previa</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Sección de Inscripción -->
+    <section class="py-16 bg-blue-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-white">¡Inscríbete Ahora!</h2>
+            <p class="text-white mt-4">Completa el formulario a continuación para reservar tu lugar en el evento.</p>
+            <!-- Botón para abrir el modal -->
+            <button 
+                id="btnAbrirModal" 
+                class="bg-blue-500 text-white px-6 py-3 rounded-lg mt-4 hover:bg-orange-400 focus:outline-none">
+                Inscribirme
+            </button>
+        </div>
+    </section>
+    
+    <!-- Modal -->
+    <div id="modalFormulario" class="fixed inset-0 hidden bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+            <!-- Botón para cerrar el modal -->
+            <button 
+                id="btnCerrarModal" 
+                class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">
+                &times;
+            </button>
+            <h3 class="text-xl font-semibold text-blue-900 mb-4">Formulario de Inscripción</h3>
+            <form>
+                <div class="mb-4">
+                    <label for="nombre" class="block text-gray-700">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="telefono" class="block text-gray-700">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="text-right">
+                    <button 
+                        type="submit" 
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-orange-400 focus:outline-none">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/assets/js/formulario.js"></script>
+</body>
+</html>

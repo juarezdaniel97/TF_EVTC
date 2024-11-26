@@ -1,0 +1,28 @@
+#materialApoyo .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#materialApoyo .card img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+#materialApoyo .card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#modalEditar {
+    display: none;
+}
+
+#modalEditar form input,
+#modalEditar form button {
+    outline: none;
+}
+
+#modalEditar button:hover {
+    cursor: pointer;
+}

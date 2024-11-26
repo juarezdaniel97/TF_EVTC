@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Barra de navegación -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+    
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <!-- Filtros -->
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex space-x-4">
+                <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="todos">Todos</button>
+                <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="proximos">Próximos</button>
+                <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="futuros">Futuros</button>
+                <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="pasados">Pasados</button>
+            </div>
+            <input 
+                type="text" 
+                id="buscarEvento" 
+                placeholder="Buscar evento por nombre..." 
+                class="w-full max-w-sm border-gray-300 rounded-lg p-2"
+            />
+        </div>
+
+        <!-- Tabla de Eventos -->
+        <div class="table-container bg-white rounded-lg shadow-lg p-4">
+            <table id="tablaEventos" class="table-auto w-full">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-blue-900">Nombre</th>
+                        <th class="px-4 py-2 text-left text-blue-900">Fecha</th>
+                        <th class="px-4 py-2 text-left text-blue-900">Lugar</th>
+                        <th class="px-4 py-2 text-center text-blue-900">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modalEvento" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitulo" class="text-xl font-bold text-blue-900"></h3>
+            <p id="modalFecha" class="text-gray-600"></p>
+            <p id="modalLugar" class="text-gray-600"></p>
+            <p id="modalDescripcion" class="text-gray-700 mt-4"></p>
+            <button 
+                id="cerrarModal" 
+                class="bg-red-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-red-600">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/assets/js/menu_dinamico.js"></script>
+    <script src="/assets/js/gestion_eventos_admin.js"></script>
+</body>
+</html>

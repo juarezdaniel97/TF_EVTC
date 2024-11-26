@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Carga de Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-b from-blue-200 to-indigo-600">
+
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+    
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Espaciador entre Header y Contenido -->
+    <div class="h-4"></div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="w-full max-w-3xl bg-white rounded-lg shadow-lg p-8">
+            <!-- Título -->
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-extrabold text-gray-800">Registrar un Nuevo Evento</h1>
+                <p class="text-gray-500">Completa los detalles para añadir un evento al sistema</p>
+            </div>
+
+            <!-- Formulario -->
+            <form id="eventForm" class="space-y-6">
+                <!-- Nombre del Evento -->
+                <div>
+                    <label for="eventName" class="block text-sm font-semibold text-gray-700 mb-1">Nombre del Evento</label>
+                    <input type="text" id="eventName" name="eventName"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Ej. Taller de Desarrollo Web" required>
+                </div>
+
+                <!-- Tipo de Evento -->
+                <div>
+                    <label for="eventType" class="block text-sm font-semibold text-gray-700 mb-1">Tipo de Evento</label>
+                    <select id="eventType" name="eventType"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="charla">Charla</option>
+                        <option value="hackaton">Hackatón</option>
+                        <option value="taller">Taller</option>
+                    </select>
+                </div>
+
+                <!-- Modalidad -->
+                <div>
+                    <label for="eventMode" class="block text-sm font-semibold text-gray-700 mb-1">Modalidad</label>
+                    <select id="eventMode" name="eventMode"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="virtual">Virtual</option>
+                        <option value="híbrido">Híbrido</option>
+                    </select>
+                </div>
+
+                <!-- Fecha y Hora -->
+                <div class="flex space-x-4">
+                    <div class="w-1/2">
+                        <label for="eventDate" class="block text-sm font-semibold text-gray-700 mb-1">Fecha</label>
+                        <input type="date" id="eventDate" name="eventDate"
+                            class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            required>
+                    </div>
+                    <div class="w-1/2">
+                        <label for="eventTime" class="block text-sm font-semibold text-gray-700 mb-1">Hora</label>
+                        <input type="time" id="eventTime" name="eventTime"
+                            class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Cantidad de Cupos -->
+                <div>
+                    <label for="eventCapacity" class="block text-sm font-semibold text-gray-700 mb-1">Cantidad de
+                        Cupos</label>
+                    <input type="number" id="eventCapacity" name="eventCapacity" min="1"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Ej. 50" required>
+                </div>
+
+                <!-- Descripción -->
+                <div>
+                    <label for="eventDescription" class="block text-sm font-semibold text-gray-700 mb-1">Descripción</label>
+                    <textarea id="eventDescription" name="eventDescription" rows="4"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Ingrese una breve descripción del evento" required></textarea>
+                </div>
+
+                <!-- Enlace o Ubicación -->
+                <div>
+                    <label for="eventLink" class="block text-sm font-semibold text-gray-700 mb-1">Enlace o Ubicación</label>
+                    <input type="text" id="eventLink" name="eventLink"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Ej. Zoom: https://zoom.us/ o Dirección: Aula 101">
+                </div>
+
+                <!-- Botón de Enviar -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        Registrar Evento
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Espaciador entre Contenido y Footer -->
+    <div class="h-4"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="/assets/js/RegistrarEvento.js"></script>
+    <script src="/assets/js/menu_dinamico.js"></script>
+
+</body>
+
+</html>

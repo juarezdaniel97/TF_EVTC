@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/notificacion.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+            
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú de navegación -->
+            <nav id="menu"
+                class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto">
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="container mx-auto py-6">
+        <!-- Evaluar Eventos -->
+        <section class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold">Evaluar Eventos</h2>
+                <input id="buscarEvaluar" type="text" placeholder="Buscar evento..."
+                    class="border border-gray-300 rounded-lg p-2 w-64">
+            </div>
+            <table class="table-auto w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-300 px-4 py-2">Evento</th>
+                        <th class="border border-gray-300 px-4 py-2">Fecha</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEvaluar"></tbody>
+            </table>
+        </section>
+
+        <!-- Historial -->
+        <section class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold">Historial</h2>
+                <input id="buscarHistorial" type="text" placeholder="Buscar evento..."
+                    class="border border-gray-300 rounded-lg p-2 w-64">
+            </div>
+            <table class="table-auto w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-300 px-4 py-2">Evento</th>
+                        <th class="border border-gray-300 px-4 py-2">Fecha</th>
+                        <th class="border border-gray-300 px-4 py-2">Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaHistorial"></tbody>
+            </table>
+        </section>
+        
+    </main>
+
+    <!-- Modal -->
+    <div id="modalEvaluar" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex justify-center items-center z-50">
+        <div class="bg-white rounded-lg shadow-lg w-96 p-6">
+            <h3 class="text-lg font-bold mb-4">Evaluar Evento</h3>
+            <form id="formEvaluar">
+                <div class="mb-4">
+                    <label for="calificacion" class="block text-gray-700 font-bold mb-2">Calificación</label>
+                    <select id="calificacion" class="w-full border border-gray-300 rounded-lg p-2" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="Excelente">Excelente</option>
+                        <option value="Bueno">Bueno</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Malo">Malo</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="comentarios" class="block text-gray-700 font-bold mb-2">Comentarios</label>
+                    <textarea id="comentarios" class="w-full border border-gray-300 rounded-lg p-2" rows="4"
+                        required></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="cerrarModal"
+                        class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Cancelar</button>
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Modal Detalles Evento -->
+    <div id="modalDetalles" class="hidden fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h3 id="modalTituloEvento" class="text-2xl font-bold mb-4">Detalles del Evento</h3>
+            <p id="modalTipo" class="mb-2"></p>
+            <p id="modalLugar" class="mb-2"></p>
+            <p id="modalModalidad" class="mb-2"></p>
+            <p id="modalExpositores" class="mb-4"></p>
+            <p id="modalDescripcion" class="mb-4"></p> <!-- Nueva sección para la descripción -->
+            <button id="cerrarModalDetalles" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="/assets/js/menu_dinamico.js"></script>
+    <script src="/assets/js/notificaciones.js"></script>
+    <script src="/assets/js/evaluar_historial.js"></script>
+</body>
+</html>

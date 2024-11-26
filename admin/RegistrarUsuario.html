@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Usuarios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+    
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6 bg-white shadow-md mt-6 rounded-lg">
+        <form id="formRegistrarUsuario">
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-700 font-bold mb-2">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded-lg p-2"
+                    required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-bold mb-2">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg p-2"
+                    required>
+            </div>
+            <div class="mb-4">
+                <label for="rol" class="block text-gray-700 font-bold mb-2">Rol</label>
+                <select id="rol" name="rol" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    <option value="administrador">Administrador</option>
+                    <option value="expositor">Expositor</option>
+                    <option value="participante">Participante</option>
+                </select>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                Registrar
+            </button>
+        </form>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="/assets/js/gestion_usuarios_admin.js"></script>
+    <script src="/assets/js/menu_dinamico.js"></script>
+</body>
+
+</html>

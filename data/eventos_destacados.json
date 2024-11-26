@@ -1,0 +1,26 @@
+[
+    {
+        "id": 5,
+        "nombre": "Hackatón Universitario",
+        "fecha": "2024-12-02",
+        "descripcion": "Colabora en desafíos tecnológicos y muestra tu creatividad.",
+        "lugar": "Laboratorio A",
+        "imagen": "/assets/img/hackaton.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Charla de Liderazgo",
+        "fecha": "2024-11-30",
+        "descripcion": "Desarrolla habilidades clave para liderar equipos y proyectos.",
+        "lugar": "Auditorio",
+        "imagen": "/assets/img/Liderazgo.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Taller de Innovación",
+        "fecha": "2024-11-27",
+        "descripcion": "Aprende técnicas de innovación para resolver problemas complejos.",
+        "lugar": "Sala 2",
+        "imagen": "/assets/img/innovacion.jpg"
+    }
+]
