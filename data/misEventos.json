@@ -7,8 +7,26 @@
     },
     {
         "id": 2,
+        "nombre": "Competencia de Programación",
+        "fecha": "2025-01-20",
+        "lugar": "Sala B"
+    },
+    {
+        "id": 3,
         "nombre": "Charla de Innovación",
         "fecha": "2024-12-15",
+        "lugar": "Sala B"
+    },
+    {
+        "id": 4,
+        "nombre": "Jornada de Ciberseguridad",
+        "fecha": "2025-01-12",
+        "lugar": "Sala B"
+    },
+    {
+        "id": 5,
+        "nombre": "Seminario de Big Data",
+        "fecha": "2025-104-15",
         "lugar": "Sala B"
     }
 ]

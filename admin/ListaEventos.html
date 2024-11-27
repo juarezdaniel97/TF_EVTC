@@ -11,8 +11,7 @@
 
     <!-- Barra de navegación -->
     <header class="bg-blue-900 text-white">
-        <div class="container mx-auto flex justify-between items-center py-4 relative">
-            <!-- Logo o nombre de la app -->
+        <div class="container mx-auto flex justify-between items-center py-4">
             <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
     
             <!-- Botón de hamburguesa -->
@@ -23,17 +22,17 @@
             </button>
     
             <!-- Menú de navegación -->
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
-                <!-- Menú dinámico generado con JavaScript -->
-            </nav>
+            <div id="menu" class="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50">
+                <!-- El contenido del menú dinámico se genera aquí -->
+            </div>
         </div>
     </header>
 
     <!-- Contenido Principal -->
-    <main class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <main class="container mx-auto py-6 px-4">
         <!-- Filtros -->
-        <div class="flex justify-between items-center mb-4">
-            <div class="flex space-x-4">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-4 space-y-4 sm:space-y-0 sm:space-x-4">
+            <div class="flex flex-wrap gap-2">
                 <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="todos">Todos</button>
                 <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="proximos">Próximos</button>
                 <button class="filtro bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white" data-filtro="futuros">Futuros</button>
@@ -43,38 +42,42 @@
                 type="text" 
                 id="buscarEvento" 
                 placeholder="Buscar evento por nombre..." 
-                class="w-full max-w-sm border-gray-300 rounded-lg p-2"
+                class="w-full sm:w-auto max-w-sm border-gray-300 rounded-lg p-2"
             />
         </div>
 
         <!-- Tabla de Eventos -->
-        <div class="table-container bg-white rounded-lg shadow-lg p-4">
-            <table id="tablaEventos" class="table-auto w-full">
-                <thead class="bg-gray-200">
-                    <tr>
-                        <th class="px-4 py-2 text-left text-blue-900">Nombre</th>
-                        <th class="px-4 py-2 text-left text-blue-900">Fecha</th>
-                        <th class="px-4 py-2 text-left text-blue-900">Lugar</th>
-                        <th class="px-4 py-2 text-center text-blue-900">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y">
-                    <!-- Filas generadas dinámicamente -->
-                </tbody>
-            </table>
+        <div class="table-container bg-white rounded-lg shadow-lg p-4 overflow-x-auto">
+                <div class="mt-16">
+                    <!-- Aquí va la tabla o el resto del contenido -->
+                    <table id="tablaEventos" class="table-auto w-full">
+                        <!-- Contenido de la tabla -->
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-blue-900">Nombre</th>
+                                <th class="px-4 py-2 text-left text-blue-900">Fecha</th>
+                                <th class="px-4 py-2 text-left text-blue-900">Lugar</th>
+                                <th class="px-4 py-2 text-center text-blue-900">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <!-- Filas generadas dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </main>
 
     <!-- Modal -->
-    <div id="modalEvento" class="modal">
-        <div class="modal-content">
+    <div id="modalEvento" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
             <h3 id="modalTitulo" class="text-xl font-bold text-blue-900"></h3>
             <p id="modalFecha" class="text-gray-600"></p>
             <p id="modalLugar" class="text-gray-600"></p>
             <p id="modalDescripcion" class="text-gray-700 mt-4"></p>
             <button 
                 id="cerrarModal" 
-                class="bg-red-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-red-600">
+                class="bg-red-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-red-600 w-full">
                 Cerrar
             </button>
         </div>

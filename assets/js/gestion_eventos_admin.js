@@ -19,7 +19,6 @@ async function cargarEventos() {
 }
 
 // Renderizar eventos
-// Renderizar eventos
 function renderEventos(filtro = 'todos', textoBusqueda = '') {
     tablaEventos.innerHTML = '';
     const hoy = new Date();
@@ -27,25 +26,24 @@ function renderEventos(filtro = 'todos', textoBusqueda = '') {
     const anioActual = hoy.getFullYear();
 
     // Rango para "próximos"
-    const inicioProximos = new Date(anioActual, mesActual, 1); // Primer día del mes actual
-    const finProximos = new Date(anioActual, mesActual + 2, 0); // Último día del próximo mes
+    const inicioProximos = new Date(anioActual, mesActual, 1);
+    const finProximos = new Date(anioActual, mesActual + 2, 0);
 
     // Rango para "futuros"
-    const inicioFuturos = new Date(anioActual, mesActual + 3, 1); // Primer día de dentro de 3 meses
+    const inicioFuturos = new Date(anioActual, mesActual + 3, 1);
 
-    let eventosFiltrados = eventos.filter(evento => evento.nombre.toLowerCase().includes(textoBusqueda.toLowerCase()));
+    let eventosFiltrados = eventos.filter(evento =>
+        evento.nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
+    );
 
     if (filtro === 'proximos') {
-        // Eventos entre el mes actual y el siguiente
         eventosFiltrados = eventosFiltrados.filter(evento => {
             const fechaEvento = new Date(evento.fecha);
             return fechaEvento >= inicioProximos && fechaEvento <= finProximos;
         });
     } else if (filtro === 'pasados') {
-        // Eventos antes de hoy
         eventosFiltrados = eventosFiltrados.filter(evento => new Date(evento.fecha) < hoy);
     } else if (filtro === 'futuros') {
-        // Eventos a partir de dentro de 3 meses
         eventosFiltrados = eventosFiltrados.filter(evento => {
             const fechaEvento = new Date(evento.fecha);
             return fechaEvento >= inicioFuturos;
@@ -69,11 +67,9 @@ function renderEventos(filtro = 'todos', textoBusqueda = '') {
         `;
         tablaEventos.appendChild(fila);
 
-        // Mostrar modal
         fila.querySelector('[data-id]').addEventListener('click', () => mostrarModal(evento));
     });
 }
-
 
 // Mostrar modal
 function mostrarModal(evento) {
@@ -82,25 +78,39 @@ function mostrarModal(evento) {
     document.getElementById('modalLugar').textContent = `Lugar: ${evento.lugar}`;
     document.getElementById('modalDescripcion').textContent = evento.descripcion;
 
-    modal.style.display = 'flex';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
 }
+
+// Cerrar modal al hacer clic fuera de él
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        cerrarModal.click();
+    }
+});
 
 // Cerrar modal
 cerrarModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
 });
 
 // Filtrar por categoría
 botonesFiltro.forEach(boton => {
     boton.addEventListener('click', () => {
         const filtro = boton.getAttribute('data-filtro');
+        // Agregar estilo al botón activo
+        botonesFiltro.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+        boton.classList.add('bg-blue-500', 'text-white');
+
         renderEventos(filtro, buscarEvento.value);
     });
 });
 
 // Búsqueda dinámica
 buscarEvento.addEventListener('input', () => {
-    renderEventos(document.querySelector('.filtro.bg-blue-500')?.getAttribute('data-filtro') || 'todos', buscarEvento.value);
+    const filtroActivo = document.querySelector('.filtro.bg-blue-500')?.getAttribute('data-filtro') || 'todos';
+    renderEventos(filtroActivo, buscarEvento.value);
 });
 
 // Cargar eventos al iniciar

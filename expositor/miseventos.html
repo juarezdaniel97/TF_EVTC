@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/assets/css/material.css">
 </head>
-<body>
+<body class="bg-gray-100">
+
     <!-- Navbar -->
     <header class="bg-blue-900 text-white">
         <div class="container mx-auto flex justify-between items-center py-4 relative">
@@ -26,8 +27,9 @@
                 <!-- Menú dinámico generado con JavaScript -->
             </nav>
         </div>
-        </header>
+    </header>
 
+    <!-- Contenido principal -->
     <main class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-blue-900 mb-6">Mis Eventos</h1>
 
@@ -48,6 +50,7 @@
             </table>
         </section>
 
+        <!-- Modal para editar evento -->
         <div id="modalEditar" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
             <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 lg:w-1/2">
                 <div class="flex justify-between items-center p-4 border-b">
@@ -77,7 +80,6 @@
                 </form>
             </div>
         </div>
-        
     </main>
 
     <!-- Footer -->
@@ -85,7 +87,7 @@
         <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
     </footer>
 
-
+    <!-- Scripts -->
     <script src="/assets/js/menu_dinamico.js"></script>
     <script src="/assets/js/gestion_expositor1.js"></script>
 </body>
