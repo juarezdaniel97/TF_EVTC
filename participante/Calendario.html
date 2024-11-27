@@ -32,53 +32,54 @@
             </nav>
         </div>
     </header>
-    <!-- Calendario -->
-    <div class="bg-gray-100 font-sans antialiased">
 
-        <div class="container mx-auto px-4 py-8">
-            <!-- Título -->
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-gray-800">Calendario de Eventos</h1>
-                <p class="text-gray-600">Explora los eventos inscriptos</p>
-            </div>
+    <main>
+        <!-- Calendario -->
+        <div class="bg-gray-100 font-sans antialiased">
 
-            <!-- Calendario -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <!-- Encabezado -->
-                <div class="flex items-center justify-between bg-blue-500 text-white px-6 py-4">
-                    <button id="prevMonth" class="text-lg font-bold">&lt;</button>
-                    <h2 id="monthYear" class="text-xl font-bold">Noviembre 2024</h2>
-                    <button id="nextMonth" class="text-lg font-bold">&gt;</button>
+            <div class="container mx-auto px-4 py-8">
+                <!-- Título -->
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-gray-800">Calendario de Eventos</h1>
+                    <p class="text-gray-600">Explora los eventos inscriptos</p>
                 </div>
 
-                <!-- Días de la semana -->
-                <div class="grid grid-cols-7 bg-gray-200 text-gray-700 text-sm font-medium text-center">
-                    <div class="py-2">Dom</div>
-                    <div class="py-2">Lun</div>
-                    <div class="py-2">Mar</div>
-                    <div class="py-2">Mié</div>
-                    <div class="py-2">Jue</div>
-                    <div class="py-2">Vie</div>
-                    <div class="py-2">Sáb</div>
+                <!-- Calendario -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <!-- Encabezado -->
+                    <div class="flex items-center justify-between bg-blue-500 text-white px-6 py-4">
+                        <button id="prevMonth" class="text-lg font-bold">&lt;</button>
+                        <h2 id="monthYear" class="text-xl font-bold">Noviembre 2024</h2>
+                        <button id="nextMonth" class="text-lg font-bold">&gt;</button>
+                    </div>
+
+                    <!-- Días de la semana -->
+                    <div class="grid grid-cols-7 bg-gray-200 text-gray-700 text-sm font-medium text-center">
+                        <div class="py-2">Dom</div>
+                        <div class="py-2">Lun</div>
+                        <div class="py-2">Mar</div>
+                        <div class="py-2">Mié</div>
+                        <div class="py-2">Jue</div>
+                        <div class="py-2">Vie</div>
+                        <div class="py-2">Sáb</div>
+                    </div>
+
+                    <!-- Días del mes -->
+                    <div id="calendarDays" class="grid grid-cols-7 text-center">
+                        <!-- Días dinámicos generados por JavaScript -->
+                    </div>
                 </div>
 
-                <!-- Días del mes -->
-                <div id="calendarDays" class="grid grid-cols-7 text-center">
-                    <!-- Días dinámicos generados por JavaScript -->
+                <!-- Lista de Eventos -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold text-gray-800">Eventos</h3>
+                    <ul id="eventList" class="mt-4 text-gray-600">
+                        <!-- Eventos dinámicos -->
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Lista de Eventos -->
-            <div class="mt-8">
-                <h3 class="text-xl font-bold text-gray-800">Eventos</h3>
-                <ul id="eventList" class="mt-4 text-gray-600">
-                    <!-- Eventos dinámicos -->
-                </ul>
             </div>
         </div>
-
-        
-    </div>
+    </main>
     
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-6">
