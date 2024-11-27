@@ -1,20 +1,20 @@
 [
     {
-        "titulo": "Conferencia sobre Tecnología",
+        "titulo": "COWORKING",
         "descripcion": "Un documento que te ayudará a preparar tus presentaciones.",
         "enlace": "https://example.com/guia-expositores.pdf",
-        "imagen": "/assets/img/presentacion_1.jfif"
+        "imagen": "/assets/img/evento_p1.jfif"
     },
     {
-        "titulo": "Naturaleza",
+        "titulo": "LIDERAZGO",
         "descripcion": "Descarga la plantilla oficial para tus diapositivas.",
         "enlace": "https://example.com/plantilla-presentacion.pptx",
-        "imagen": "/assets/img/presentacion_2.jfif"
+        "imagen": "/assets/img/evento_p2.jfif"
     },
     {
-        "titulo": "Bienestar",
+        "titulo": "DISEÑO",
         "descripcion": "Instrucciones para gestionar tus eventos de manera eficiente.",
         "enlace": "https://example.com/manual-uso.pdf",
-        "imagen": "/assets/img/presentacion_3.jfif"
+        "imagen": "/assets/img/evento_p3.jfif"
     }
 ]

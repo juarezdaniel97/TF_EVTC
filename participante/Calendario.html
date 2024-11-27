@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Interactivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4 relative">
+            <!-- Logo o nombre de la app -->
+            <a href="/" class="text-white text-2xl font-semibold">PGEE</a>
+
+            <!-- Botón de hamburguesa -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none hover:text-orange-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Menú de navegación -->
+            <nav id="menu"
+                class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
+                <!-- Menú dinámico generado con JavaScript -->
+            </nav>
+        </div>
+    </header>
+    <!-- Calendario -->
+    <div class="bg-gray-100 font-sans antialiased">
+
+        <div class="container mx-auto px-4 py-8">
+            <!-- Título -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">Calendario de Eventos</h1>
+                <p class="text-gray-600">Explora los eventos inscriptos</p>
+            </div>
+
+            <!-- Calendario -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <!-- Encabezado -->
+                <div class="flex items-center justify-between bg-blue-500 text-white px-6 py-4">
+                    <button id="prevMonth" class="text-lg font-bold">&lt;</button>
+                    <h2 id="monthYear" class="text-xl font-bold">Noviembre 2024</h2>
+                    <button id="nextMonth" class="text-lg font-bold">&gt;</button>
+                </div>
+
+                <!-- Días de la semana -->
+                <div class="grid grid-cols-7 bg-gray-200 text-gray-700 text-sm font-medium text-center">
+                    <div class="py-2">Dom</div>
+                    <div class="py-2">Lun</div>
+                    <div class="py-2">Mar</div>
+                    <div class="py-2">Mié</div>
+                    <div class="py-2">Jue</div>
+                    <div class="py-2">Vie</div>
+                    <div class="py-2">Sáb</div>
+                </div>
+
+                <!-- Días del mes -->
+                <div id="calendarDays" class="grid grid-cols-7 text-center">
+                    <!-- Días dinámicos generados por JavaScript -->
+                </div>
+            </div>
+
+            <!-- Lista de Eventos -->
+            <div class="mt-8">
+                <h3 class="text-xl font-bold text-gray-800">Eventos</h3>
+                <ul id="eventList" class="mt-4 text-gray-600">
+                    <!-- Eventos dinámicos -->
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/assets/js/menu_dinamico.js"></script>
+    <script src="/assets/js/notificaciones.js"></script>
+    <script src="/assets/js/calendario.js"></script>
+</body>
+
+</html>

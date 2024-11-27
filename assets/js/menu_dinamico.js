@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="/participante/MisInscripciones.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Mis Inscripciones</a>
             <a href="/participante/MaterialDeApoyo.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Material</a>
             <a href="/participante/Historial.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Historial</a>
+            <a href="/participante/Calendario.html" class="block text-white hover:text-orange-400 text-lg font-medium transition duration-300 ease-in-out">Calendario</a>
             <div class="relative" id="notificaciones">
                 <button id="notificacionesToggle" class="relative flex items-center justify-center text-white hover:text-orange-400 text-lg transition duration-300 ease-in-out">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
