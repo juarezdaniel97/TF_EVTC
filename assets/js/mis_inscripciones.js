@@ -1,47 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
     const tablaInscripciones = document.getElementById("tablaInscripciones");
+    const selectEstado = document.getElementById("selectEstado");
+    const modalConsulta = document.getElementById("modalConsulta");
+    const cerrarModal = document.getElementById("cerrarModal");
+    const enviarConsulta = document.getElementById("enviarConsulta");
 
-    // Datos simulados de eventos inscritos
+    // Datos simulados de inscripciones
     const eventosInscritos = [
-        { id: 1, nombre: "Conferencia Tecnología", fecha: "2024-11-25", lugar: "Auditorio", certificado: true },
-        { id: 2, nombre: "Taller de Innovación", fecha: "2024-12-15", lugar: "Sala 3", certificado: false },
-        { id: 3, nombre: "Seminario de Inteligencia Artificial", fecha: "2024-12-01", lugar: "Aula Magna", certificado: true },
-        { id: 4, nombre: "Curso de Machine Learning", fecha: "2024-11-30", lugar: "Laboratorio 2", certificado: false },
-        { id: 5, nombre: "Charla sobre Ciberseguridad", fecha: "2024-12-05", lugar: "Auditorio", certificado: true },
+        { id: 1, nombre: "Conferencia Tecnología", fecha: "2024-11-25", lugar: "Auditorio", estado: "aprobada", certificado: true },
+        { id: 2, nombre: "Taller de Innovación", fecha: "2024-12-15", lugar: "Sala 3", estado: "pendiente", certificado: false },
+        { id: 3, nombre: "Seminario de Inteligencia Artificial", fecha: "2024-12-01", lugar: "Aula Magna", estado: "rechazada", certificado: true },
+        { id: 4, nombre: "Curso de Machine Learning", fecha: "2024-11-30", lugar: "Laboratorio 2", estado: "aprobada", certificado: false },
+        { id: 5, nombre: "Charla sobre Ciberseguridad", fecha: "2024-12-05", lugar: "Auditorio", estado: "rechazada", certificado: false },
     ];
 
-    // Renderizar eventos inscritos
-    const renderEventos = () => {
+    // Función para filtrar eventos según el estado
+    const filtrarEventos = () => {
+        const estadoSeleccionado = selectEstado.value;
+        let eventosFiltrados = eventosInscritos;
+
+        if (estadoSeleccionado !== "todos") {
+            eventosFiltrados = eventosInscritos.filter(evento => evento.estado === estadoSeleccionado);
+        }
+
+        renderEventos(eventosFiltrados);
+    };
+
+    // Renderizar eventos en la tabla
+    const renderEventos = (eventos) => {
         tablaInscripciones.innerHTML = "";
 
-        if (eventosInscritos.length === 0) {
+        if (eventos.length === 0) {
             tablaInscripciones.innerHTML = `
                 <tr>
-                    <td colspan="4" class="text-center py-4 text-gray-600">No tienes inscripciones registradas.</td>
+                    <td colspan="4" class="text-center py-4 text-gray-600">No tienes inscripciones registradas para este filtro.</td>
                 </tr>`;
             return;
         }
 
-        eventosInscritos.forEach(evento => {
+        eventos.forEach(evento => {
             const fila = document.createElement("tr");
             fila.innerHTML = `
                 <td class="px-4 py-2">${evento.nombre}</td>
                 <td class="px-4 py-2">${evento.fecha}</td>
                 <td class="px-4 py-2">${evento.lugar}</td>
                 <td class="px-4 py-2 flex flex-col gap-2 justify-center md:flex-row md:gap-4 text-center">
-                    ${evento.certificado ? 
+                    ${evento.estado === "aprobada" ? 
                         `<button class="bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-600 transition" data-id="${evento.id}">
-                            Descargar Certificado
+                            ${evento.certificado ? 'Descargar Certificado' : 'Certificado no disponible'}
                         </button>` : 
-                        `<span class="text-gray-500">Certificado no disponible</span>`}
-                    <button class="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition" data-id="${evento.id}">
-                        Cancelar Inscripción
-                    </button>
+                        evento.estado === "rechazada" ? 
+                        `<button class="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-600 transition" data-id="${evento.id}">
+                            Consultar
+                        </button>` : 
+                        ""}
+                    ${evento.estado === "aprobada" ? 
+                        `<button class="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition" data-id="${evento.id}">
+                            Cancelar Inscripción
+                        </button>` : 
+                        ""}
                 </td>
             `;
             tablaInscripciones.appendChild(fila);
 
-            // Descargar certificado
+            // Lógica para Descargar Certificado
             const botonCertificado = fila.querySelector("button.bg-green-500");
             if (botonCertificado) {
                 botonCertificado.addEventListener("click", () => {
@@ -49,10 +71,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            // Cancelar inscripción
-            fila.querySelector("button.bg-red-500").addEventListener("click", () => {
-                cancelarInscripcion(evento);
-            });
+            // Lógica para Consultar Inscripción (estado rechazada)
+            const botonConsultar = fila.querySelector("button.bg-blue-500");
+            if (botonConsultar) {
+                botonConsultar.addEventListener("click", () => {
+                    abrirModalConsulta(evento);
+                });
+            }
+
+            // Lógica para Cancelar Inscripción
+            const botonCancelar = fila.querySelector("button.bg-red-500");
+            if (botonCancelar) {
+                botonCancelar.addEventListener("click", () => {
+                    cancelarInscripcion(evento);
+                });
+            }
         });
     };
 
@@ -70,11 +103,30 @@ document.addEventListener("DOMContentLoaded", () => {
             if (index !== -1) {
                 eventosInscritos.splice(index, 1);
                 alert(`Inscripción cancelada para "${evento.nombre}".`);
-                renderEventos(); // Actualizamos la tabla
+                renderEventos(eventosInscritos); // Actualizamos la tabla
             }
         }
     };
 
+    // Función para abrir el modal de consulta
+    const abrirModalConsulta = (evento) => {
+        modalConsulta.classList.remove("hidden");
+    };
+
+    // Cerrar el modal
+    cerrarModal.addEventListener("click", () => {
+        modalConsulta.classList.add("hidden");
+    });
+
+    // Enviar consulta
+    enviarConsulta.addEventListener("click", () => {
+        alert(`Consulta enviada para el evento: "${document.getElementById("consultaMensaje").value}"`);
+        modalConsulta.classList.add("hidden");
+    });
+
+    // Filtrar eventos al cambiar el estado seleccionado
+    selectEstado.addEventListener("change", filtrarEventos);
+
     // Renderizar los eventos al cargar la página
-    renderEventos();
+    renderEventos(eventosInscritos);
 });
