@@ -22,9 +22,9 @@
             </button>
     
             <!-- Menú de navegación -->
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:space-x-6">
-                <!-- Menú dinámico generado con JavaScript -->
-            </nav>
+            <div id="menu" class="fixed top-0 left-0 w-full bg-gray-800 p-4 z-50">
+                <!-- El contenido del menú dinámico se genera aquí -->
+            </div>
         </div>
     </header>
 
@@ -48,19 +48,23 @@
 
         <!-- Tabla de Eventos -->
         <div class="table-container bg-white rounded-lg shadow-lg p-4 overflow-x-auto">
-            <table id="tablaEventos" class="table-auto w-full">
-                <thead class="bg-gray-200">
-                    <tr>
-                        <th class="px-4 py-2 text-left text-blue-900">Nombre</th>
-                        <th class="px-4 py-2 text-left text-blue-900">Fecha</th>
-                        <th class="px-4 py-2 text-left text-blue-900">Lugar</th>
-                        <th class="px-4 py-2 text-center text-blue-900">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y">
-                    <!-- Filas generadas dinámicamente -->
-                </tbody>
-            </table>
+                <div class="mt-16">
+                    <!-- Aquí va la tabla o el resto del contenido -->
+                    <table id="tablaEventos" class="table-auto w-full">
+                        <!-- Contenido de la tabla -->
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-blue-900">Nombre</th>
+                                <th class="px-4 py-2 text-left text-blue-900">Fecha</th>
+                                <th class="px-4 py-2 text-left text-blue-900">Lugar</th>
+                                <th class="px-4 py-2 text-center text-blue-900">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <!-- Filas generadas dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </main>
 
