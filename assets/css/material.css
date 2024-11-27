@@ -1,3 +1,9 @@
+/* Corrección para asegurar que el menú no se superponga */
+#menu {
+    z-index: 50; /* Prioridad sobre otros elementos */
+}
+
+/* Estilo para las tarjetas del material de apoyo */
 #materialApoyo .card {
     display: flex;
     flex-direction: column;
@@ -14,6 +20,7 @@
     font-weight: bold;
 }
 
+/* Estilos para el modal (si es necesario) */
 #modalEditar {
     display: none;
 }

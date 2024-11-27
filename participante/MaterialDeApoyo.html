@@ -23,12 +23,17 @@
             </button>
     
             <!-- Menú de navegación -->
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center">
-                <!-- Menú dinámico generado con JavaScript -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-blue-900 lg:relative lg:flex lg:flex-row lg:space-x-6 lg:space-y-0 lg:w-auto lg:items-center z-50">
+                <ul class="flex flex-col lg:flex-row lg:space-x-6">
+                    <li><a href="/opcion1" class="block px-4 py-2 text-white hover:text-orange-400">Opción 1</a></li>
+                    <li><a href="/opcion2" class="block px-4 py-2 text-white hover:text-orange-400">Opción 2</a></li>
+                    <li><a href="/opcion3" class="block px-4 py-2 text-white hover:text-orange-400">Opción 3</a></li>
+                </ul>
             </nav>
         </div>
-        </header>
+    </header>
 
+    <!-- Contenido principal -->
     <main class="container mx-auto p-6">
         <h1 class="text-3xl font-bold text-blue-900 mb-6">Material de Apoyo</h1>
 
@@ -44,7 +49,6 @@
     <footer class="bg-gray-800 text-white text-center py-6">
         <p>&copy; 2024 PGEE - Todos los derechos reservados.</p>
     </footer>
-
 
     <!-- Scripts -->
     <script src="/assets/js/menu_dinamico.js"></script>
